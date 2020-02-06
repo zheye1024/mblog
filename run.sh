@@ -20,7 +20,7 @@ start(){
 	if [ $? -eq "0" ]; then
 		echo "${APP_NAME} running. pid=${pid}"
 	else
-		nohup java -jar ./target/$APP_NAME > log.file 2>log.error &
+		nohup java -jar $APP_NAME > /logs/mblog/mblog.log 2>&1 &
 		echo "${APP_NAME} started"
 	fi
 }
